@@ -1,0 +1,29 @@
+:root {
+  --mustard: #ecbc55;
+  --pistachio: #54a4af;
+  --grey: #535474;
+  --purple: #432c51;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  background-color: var(--purple);
+  color: var(--mustard);
+  font-family: "Gruppo", cursive;
+}
+
+h1 {
+  font-family: "Marhey", cursive;
+  background-color: var(--grey);
+  text-align: center;
+  padding: 0.5em;
+  font-size: clamp(1.5rem, 2.5vw, 4rem);
+  width: 65vw;
+  margin: auto;
+  border-radius: 0 50px;
+}
