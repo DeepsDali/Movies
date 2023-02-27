@@ -15,15 +15,67 @@ body {
   background-color: var(--purple);
   color: var(--mustard);
   font-family: "Gruppo", cursive;
+  font-size: 1em;
 }
 
 h1 {
   font-family: "Marhey", cursive;
   background-color: var(--grey);
   text-align: center;
-  padding: 0.5em;
+  padding: 0.25em;
   font-size: clamp(1.5rem, 2.5vw, 4rem);
   width: 65vw;
   margin: auto;
   border-radius: 0 50px;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.25em;
+  margin-top: 0.5em;
+}
+.nav_btn {
+  background-color: var(--grey);
+  text-align: center;
+  padding: 0.5em;
+  color: var(--mustard);
+  border-radius: 0 25px;
+  text-decoration: none;
+  font-size: clamp(1rem, 2vw, 4rem);
+  font-weight: bold;
+}
+.nav_btn:hover {
+  background-color: var(--mustard);
+  color: var(--grey);
+}
+.container {
+  margin: 1em auto;
+  width: 80vw;
+}
+.btn_title {
+  padding: 0.25em;
+  background-color: var(--pistachio);
+  text-align: left;
+  padding-left: 2.5em;
+  color: var(--purple);
+  width: 100%;
+  cursor: pointer;
+  font-size: clamp(1rem, 2vw, 3rem);
+  margin: 5px auto;
+  border-width: 0;
+  border-radius: 0 25px;
+  font-weight: bold;
+}
+.btn_title:hover {
+  background-color: var(--mustard);
+}
+.content {
+  padding: 0.25em;
+  background-color: var(--grey);
+  text-align: center;
+  padding: 1em;
+  border-radius: 0 0 25px 0;
+  color: var(--mustard);
+  font-size: clamp(1.5rem, 2.5vw, 4rem);
+  margin: auto;
 }
