@@ -45,7 +45,14 @@ const movie_list = document.querySelector(".btn_list");
 
 movies.forEach((movie) => {
   let li = document.createElement("li");
-  li.innerHTML = `${movie[1].year} : ${movie[0]}`;
   li.classList.add("btn_title");
+  let movie_info = document.createElement("div");
+  movie_info.classList.add("mov");
+  let poster = document.createElement("img");
+  poster.classList.add("poster_img");
+  li.innerHTML = `${movie[1].year} : ${movie[0]}`;
+  poster.src = movie[1].link;
+  movie_info.appendChild(poster);
+  li.appendChild(movie_info);
   movie_list.appendChild(li);
 });

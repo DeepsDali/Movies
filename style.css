@@ -68,6 +68,11 @@ nav {
   border-radius: 0 25px;
   font-weight: bold;
 }
+.mov {
+  padding: 1vw;
+  width: 100%;
+  display: none;
+}
 .btn_title:hover {
   background-color: var(--mustard);
 }
