@@ -89,3 +89,6 @@ nav {
 ul {
   text-decoration: none;
 }
+.active {
+  display: block;
+}

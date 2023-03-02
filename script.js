@@ -55,4 +55,12 @@ movies.forEach((movie) => {
   movie_info.appendChild(poster);
   li.appendChild(movie_info);
   movie_list.appendChild(li);
+
+  const buttons = document.querySelectorAll(".btn_title");
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      console.log("Clicked");
+      movie_info.classList.toggle("active");
+    });
+  });
 });
