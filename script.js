@@ -38,14 +38,14 @@ let movieData = {
     link: "./images/budapest.jpg",
   },
 };
-let movie_names = Object.keys(movieData);
-console.log(movie_names);
+let movies = Object.entries(movieData);
+console.log(movies[0][0]);
+console.log(movies);
 const movie_list = document.querySelector(".btn_list");
 
-movie_names.forEach((movie_name) => {
-  console.log(movie_name);
+movies.forEach((movie) => {
   let li = document.createElement("li");
-  li.innerHTML = `${movie_name}`;
+  li.innerHTML = `${movie[1].year} : ${movie[0]}`;
   li.classList.add("btn_title");
   movie_list.appendChild(li);
 });
