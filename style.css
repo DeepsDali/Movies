@@ -72,6 +72,21 @@ nav {
   padding: 1vw;
   width: 100%;
   display: none;
+  background-color: var(--mustard);
+}
+.poster_Div {
+  background-color: var(--purple);
+  width: 50%;
+}
+.poster_img {
+  padding: 5px;
+}
+.movie_details_Div {
+  background-color: var(--grey);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 50%;
 }
 .btn_title:hover {
   background-color: var(--mustard);
@@ -90,5 +105,7 @@ ul {
   text-decoration: none;
 }
 .active {
-  display: block;
+  display: inline-flex;
+  padding: 1vw;
+  width: 100%;
 }

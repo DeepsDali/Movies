@@ -41,26 +41,52 @@ let movieData = {
 let movies = Object.entries(movieData);
 console.log(movies[0][0]);
 console.log(movies);
-const movie_list = document.querySelector(".btn_list");
+const acc = document.querySelector("#accordian");
 
 movies.forEach((movie) => {
-  let li = document.createElement("li");
-  li.classList.add("btn_title");
+  // Create elements and classlist
+  // Button
+  let btn = document.createElement("button");
+  btn.classList.add("btn_title");
+  // movie-info div
   let movie_info = document.createElement("div");
   movie_info.classList.add("mov");
+  // poster div
+  let posterDiv = document.createElement("div");
+  posterDiv.classList.add("poster_Div");
   let poster = document.createElement("img");
   poster.classList.add("poster_img");
-  li.innerHTML = `${movie[1].year} : ${movie[0]}`;
-  poster.src = movie[1].link;
-  movie_info.appendChild(poster);
-  li.appendChild(movie_info);
-  movie_list.appendChild(li);
+  // movie-details div
+  let movieDetailsDiv = document.createElement("div");
+  movieDetailsDiv.classList.add("movie_details_Div");
+  let plot = document.createElement("p");
+  let cast = document.createElement("p");
+  let runtime = document.createElement("p");
+  let rating = document.createElement("p");
 
-  const buttons = document.querySelectorAll(".btn_title");
-  buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      console.log("Clicked");
-      movie_info.classList.toggle("active");
-    });
+  // Add content to elements
+  btn.innerHTML = `${movie[1].year} : ${movie[0]}`;
+  poster.src = movie[1].link;
+  plot.innerHTML = `Plot: ${movie[1].plot}`;
+  cast.innerHTML = `Cast: ${movie[1].cast}`;
+  runtime.innerHTML = `Runtime: ${movie[1].runtime}`;
+  rating.innerHTML = `Rating: ${movie[1].rating}`;
+
+  // Append elements
+  posterDiv.appendChild(poster);
+  movieDetailsDiv.appendChild(plot);
+  movieDetailsDiv.appendChild(cast);
+  movieDetailsDiv.appendChild(runtime);
+  movieDetailsDiv.appendChild(rating);
+  movie_info.appendChild(posterDiv);
+  movie_info.appendChild(movieDetailsDiv);
+
+  acc.appendChild(btn);
+  acc.appendChild(movie_info);
+
+  // Toggle to show / hide movie info
+  btn.addEventListener("click", () => {
+    console.log("Clicked");
+    movie_info.classList.toggle("active");
   });
 });
