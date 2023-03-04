@@ -41,54 +41,76 @@ let movieData = {
 let movies = Object.entries(movieData);
 console.log(movies[0][0]);
 console.log(movies);
-const acc = document.querySelector("#accordian");
 
-movies.forEach((movie) => {
-  // Create Button
-  let btn = document.createElement("button");
-  btn.classList.add("btn_title");
-  // Create movie-info div
-  let movie_info = document.createElement("div");
-  movie_info.classList.add("mov");
-  // Create poster div
-  let posterDiv = document.createElement("div");
-  posterDiv.classList.add("poster_Div");
-  let poster = document.createElement("img");
-  poster.classList.add("poster_img");
-  // Create movie-details div
-  let movieDetailsDiv = document.createElement("div");
-  movieDetailsDiv.classList.add("movie_details_Div");
-  let plot = document.createElement("p");
-  let cast = document.createElement("p");
-  let runtime = document.createElement("p");
-  let rating = document.createElement("p");
-  let watchBtn = document.createElement("button");
-  watchBtn.classList.add("watch_btn");
+accordianContainer = document.querySelector(".container");
+// Show Accordian function
+let showAccordian = () => {
+  console.log("show accordian");
 
-  // Add content to elements
-  btn.innerHTML = `${movie[1].year} : ${movie[0]}`;
-  poster.src = movie[1].link;
-  plot.innerHTML = `Plot: ${movie[1].plot}`;
-  cast.innerHTML = `Cast: ${movie[1].cast}`;
-  runtime.innerHTML = `Runtime: ${movie[1].runtime}`;
-  rating.innerHTML = `Rating: ${movie[1].rating}`;
-  watchBtn.innerHTML = `Add to Watchlist`;
-  // Append elements
-  posterDiv.appendChild(poster);
-  movieDetailsDiv.appendChild(plot);
-  movieDetailsDiv.appendChild(cast);
-  movieDetailsDiv.appendChild(runtime);
-  movieDetailsDiv.appendChild(rating);
-  movieDetailsDiv.appendChild(watchBtn);
-  movie_info.appendChild(posterDiv);
-  movie_info.appendChild(movieDetailsDiv);
+  let accorDiv = document.createElement("div");
+  accorDiv.classList.add("accordian");
 
-  acc.appendChild(btn);
-  acc.appendChild(movie_info);
-
-  // Toggle to show / hide movie info
-  btn.addEventListener("click", () => {
-    console.log("Clicked");
-    movie_info.classList.toggle("active");
+  movies.forEach((movie) => {
+    // Create Button
+    let btn = document.createElement("button");
+    btn.classList.add("btn_title");
+    // Create movie-info div
+    let movie_info = document.createElement("div");
+    movie_info.classList.add("mov");
+    // Create poster div
+    let posterDiv = document.createElement("div");
+    posterDiv.classList.add("poster_Div");
+    let poster = document.createElement("img");
+    poster.classList.add("poster_img");
+    // Create movie-details div
+    let movieDetailsDiv = document.createElement("div");
+    movieDetailsDiv.classList.add("movie_details_Div");
+    let plot = document.createElement("p");
+    let cast = document.createElement("p");
+    let runtime = document.createElement("p");
+    let rating = document.createElement("p");
+    let watchBtn = document.createElement("button");
+    watchBtn.classList.add("watch_btn");
+    // Add content to elements
+    btn.innerHTML = `${movie[1].year} : ${movie[0]}`;
+    poster.src = movie[1].link;
+    plot.innerHTML = `Plot: ${movie[1].plot}`;
+    cast.innerHTML = `Cast: ${movie[1].cast}`;
+    runtime.innerHTML = `Runtime: ${movie[1].runtime}`;
+    rating.innerHTML = `Rating: ${movie[1].rating}`;
+    watchBtn.innerHTML = `Add to Watchlist`;
+    // Append elements
+    posterDiv.appendChild(poster);
+    movieDetailsDiv.appendChild(plot);
+    movieDetailsDiv.appendChild(cast);
+    movieDetailsDiv.appendChild(runtime);
+    movieDetailsDiv.appendChild(rating);
+    movieDetailsDiv.appendChild(watchBtn);
+    movie_info.appendChild(posterDiv);
+    movie_info.appendChild(movieDetailsDiv);
+    accorDiv.appendChild(btn);
+    accorDiv.appendChild(movie_info);
+    accordianContainer.appendChild(accorDiv);
+    // Toggle to show / hide movie info
+    btn.addEventListener("click", () => {
+      console.log("Clicked");
+      movie_info.classList.toggle("active");
+    });
   });
+};
+showAccordian();
+
+// Add Movie button function
+const acc = document.querySelector(".accordian");
+let addMov = document.querySelector("#add_mov");
+
+addMov.addEventListener("click", () => {
+  console.log("clicked add mov");
+});
+
+// Add Watchlist button function
+let addWatch = document.querySelector("#add_watch");
+
+addWatch.addEventListener("click", () => {
+  console.log("clicked add watch");
 });
