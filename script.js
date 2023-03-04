@@ -44,25 +44,26 @@ console.log(movies);
 const acc = document.querySelector("#accordian");
 
 movies.forEach((movie) => {
-  // Create elements and classlist
-  // Button
+  // Create Button
   let btn = document.createElement("button");
   btn.classList.add("btn_title");
-  // movie-info div
+  // Create movie-info div
   let movie_info = document.createElement("div");
   movie_info.classList.add("mov");
-  // poster div
+  // Create poster div
   let posterDiv = document.createElement("div");
   posterDiv.classList.add("poster_Div");
   let poster = document.createElement("img");
   poster.classList.add("poster_img");
-  // movie-details div
+  // Create movie-details div
   let movieDetailsDiv = document.createElement("div");
   movieDetailsDiv.classList.add("movie_details_Div");
   let plot = document.createElement("p");
   let cast = document.createElement("p");
   let runtime = document.createElement("p");
   let rating = document.createElement("p");
+  let watchBtn = document.createElement("button");
+  watchBtn.classList.add("watch_btn");
 
   // Add content to elements
   btn.innerHTML = `${movie[1].year} : ${movie[0]}`;
@@ -71,13 +72,14 @@ movies.forEach((movie) => {
   cast.innerHTML = `Cast: ${movie[1].cast}`;
   runtime.innerHTML = `Runtime: ${movie[1].runtime}`;
   rating.innerHTML = `Rating: ${movie[1].rating}`;
-
+  watchBtn.innerHTML = `Add to Watchlist`;
   // Append elements
   posterDiv.appendChild(poster);
   movieDetailsDiv.appendChild(plot);
   movieDetailsDiv.appendChild(cast);
   movieDetailsDiv.appendChild(runtime);
   movieDetailsDiv.appendChild(rating);
+  movieDetailsDiv.appendChild(watchBtn);
   movie_info.appendChild(posterDiv);
   movie_info.appendChild(movieDetailsDiv);
 
