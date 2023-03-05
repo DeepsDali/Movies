@@ -61,7 +61,6 @@ nav {
 .btn_title {
   font-family: "Gruppo", cursive;
   font-weight: bold;
-  /* list-style-type: none; */
   padding: 0.5em;
   background-color: var(--pistachio);
   text-align: left;
@@ -83,14 +82,15 @@ nav {
   background-color: var(--pistachio);
 }
 .poster_Div {
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-basis: 150px;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 .poster_img {
   padding: 5px;
   object-fit: contain;
+  max-height: 100%;
+  max-width: 100%;
 }
 .movie_details_Div {
   color: var(--purple);
@@ -100,6 +100,7 @@ nav {
   flex-direction: column;
   justify-content: space-around;
   padding: 5px;
+  height: 300px;
 }
 .btn_title:hover {
   background-color: var(--mustard);
@@ -117,7 +118,8 @@ nav {
 .active {
   display: inline-flex;
   padding: 1vw;
-  width: 100%;
+
+  /* width: 100%; */
 }
 .form_Div {
   display: none;

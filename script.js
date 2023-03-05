@@ -6,7 +6,7 @@ let movieData = {
     runtime: 151,
     rating: 7.2,
     year: 2007,
-    link: "./images/darjeeling.jpg",
+    link: "https://cdn.shopify.com/s/files/1/0037/8008/3782/products/IMG_2440-740741.jpg?v=1611688443 ",
   },
   "The Royal Tenenbaums": {
     plot: "The eccentric members of a dysfunctional family reluctantly gather under the same roof for various reasons",
@@ -14,7 +14,7 @@ let movieData = {
     year: 2001,
     cast: ["Gene Hackman", "Gwnyeth Paltrow", "Anjelica Huston"],
     runtime: 170,
-    link: "./images/royal.jpg",
+    link: "https://cdn.shopify.com/s/files/1/0037/8008/3782/products/royal_tenenbaums_xlg-868522_4c1cffbe-3538-4681-bc5e-7c6f71ed6c07-221962.jpg?v=1663173396",
   },
   "Fantastic Mr. Fox": {
     year: 2009,
@@ -27,7 +27,7 @@ let movieData = {
     ],
     runtime: 147,
     rating: 7.9,
-    link: "./images/fox.jpg",
+    link: "https://cdn.shopify.com/s/files/1/0037/8008/3782/products/EEC8D35A-C900-4EF1-B476-C9F876492747-328288_1024x1024@2x.jpg?v=1611687955",
   },
   "The Grand Budapest Hotel": {
     rating: 8.1,
@@ -35,7 +35,7 @@ let movieData = {
     year: 2014,
     plot: "A writer encounters the owner of an aging high-class hotel, who tells him of his early years serving as a lobby boy in the hotel's glorious years under an exceptional concierge.",
     cast: ["Ralph Fiennes", "F. Murray Abraham", "Mathieu Amalric"],
-    link: "./images/budapest.jpg",
+    link: "https://cdn.shopify.com/s/files/1/0037/8008/3782/products/Grand_Budapest_Hotel_Style_B-284653_1200x1200.jpg?v=1611688501",
   },
 };
 let movies = Object.entries(movieData);
