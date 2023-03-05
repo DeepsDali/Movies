@@ -41,8 +41,9 @@ let movieData = {
 let movies = Object.entries(movieData);
 console.log(movies[0][0]);
 console.log(movies);
+accordianContainer = document.querySelector("#accordian_container");
+formContainer = document.querySelector("#form_container");
 
-accordianContainer = document.querySelector(".container");
 // Show Accordian function
 let showAccordian = () => {
   console.log("show accordian");
@@ -70,7 +71,7 @@ let showAccordian = () => {
     let runtime = document.createElement("p");
     let rating = document.createElement("p");
     let watchBtn = document.createElement("button");
-    watchBtn.classList.add("watch_btn");
+    watchBtn.classList.add("nav_btn");
     // Add content to elements
     btn.innerHTML = `${movie[1].year} : ${movie[0]}`;
     poster.src = movie[1].link;
@@ -100,17 +101,39 @@ let showAccordian = () => {
 };
 showAccordian();
 
-// Add Movie button function
-const acc = document.querySelector(".accordian");
-let addMov = document.querySelector("#add_mov");
+// Add Show Movie Form Function
+let showMovieForm = () => {
+  let formDiv = document.createElement("div");
+  formDiv.classList.add("form_Div");
+  let para = document.createElement("p");
+  para.innerHTML = `This is a form`;
+  formDiv.appendChild(para);
+  formContainer.appendChild(formDiv);
+};
 
+let acc = document.querySelector(".accordian");
+let form = document.querySelector(".form_Div");
+let addMov = document.querySelector("#add_mov");
+let homeBtn = document.querySelector("#home");
+
+// Add initialization function
+
+let init = () => {
+  acc = document.querySelector(".accordian");
+  form = document.querySelector(".form_Div");
+};
+
+// Add Movie button function
 addMov.addEventListener("click", () => {
   console.log("clicked add mov");
+  init();
+  acc.remove();
+  showMovieForm();
 });
-
-// Add Watchlist button function
-let addWatch = document.querySelector("#add_watch");
-
-addWatch.addEventListener("click", () => {
+// Add home button function
+homeBtn.addEventListener("click", () => {
   console.log("clicked add watch");
+  init();
+  formContainer.removeChild(form);
+  showAccordian();
 });

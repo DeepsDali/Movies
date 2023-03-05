@@ -1,7 +1,6 @@
 :root {
   --mustard: #ecbc55;
   --pistachio: #a4f0f8;
-  /* --pistachio: #54a4af; */
   --grey: #535474;
   --purple: #432c51;
 }
@@ -20,16 +19,12 @@ body {
 }
 
 h1 {
-  /* font-family: "Marhey", cursive; */
   font-family: "Gruppo", cursive;
   background-color: var(--grey);
   text-align: center;
   padding: 0.5em;
-  font-size: clamp(1.5rem, 2.5vw, 4rem);
-  width: 50vw;
-  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+  font-size: clamp(2rem, 3vw, 4rem);
+  width: 90vw;
   margin: auto;
   border-radius: 0 50px;
 }
@@ -39,25 +34,22 @@ nav {
   padding: 0.25em;
   margin-top: 0.5em;
 }
-.nav_btn,
-.watch_btn {
+.nav_btn {
+  font-family: "Gruppo", cursive;
   background-color: var(--grey);
   text-align: center;
   padding: 0.5em;
   cursor: pointer;
   border-width: 0;
+  width: 110px;
   color: var(--mustard);
   border-radius: 0 25px;
   text-decoration: none;
+  font-weight: bold;
   font-size: clamp(1rem, 1.5vw, 3rem);
 }
-.watch_btn {
-  font-size: 1em;
-  width: 45vw;
-  padding: 0.25em;
-}
-.nav_btn:hover,
-.watch_btn:hover {
+
+.nav_btn:hover {
   background-color: var(--mustard);
   color: var(--purple);
 }
@@ -67,6 +59,8 @@ nav {
   width: 95vw;
 }
 .btn_title {
+  font-family: "Gruppo", cursive;
+  font-weight: bold;
   list-style-type: none;
   padding: 0.5em;
   background-color: var(--pistachio);
@@ -127,6 +121,11 @@ nav {
   padding: 1vw;
   width: 100%;
 }
+.form_Div {
+  background-color: var(--pistachio);
+  color: var(--purple);
+  min-height: 100vh;
+}
 @media only screen and (min-width: 768px) {
   .container {
     margin: 1em auto;
@@ -137,8 +136,5 @@ nav {
   }
   .poster_Div {
     width: 30vw;
-  }
-  .watch_btn {
-    width: 20vw;
   }
 }
