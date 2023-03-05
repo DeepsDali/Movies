@@ -102,15 +102,16 @@ let showAccordian = () => {
 showAccordian();
 
 // Add Show Movie Form Function
-let showMovieForm = () => {
-  let formDiv = document.createElement("div");
-  formDiv.classList.add("form_Div");
-  let para = document.createElement("p");
-  para.innerHTML = `This is a form`;
-  formDiv.appendChild(para);
-  formContainer.appendChild(formDiv);
-};
+// let showMovieForm = () => {
+//   let formDiv = document.createElement("div");
+//   formDiv.classList.add("form_Div");
+//   let para = document.createElement("p");
+//   para.innerHTML = `This is a form`;
+//   formDiv.appendChild(para);
+//   formContainer.appendChild(formDiv);
+// };
 
+let formDiv = document.querySelector(".form_Div");
 let acc = document.querySelector(".accordian");
 let form = document.querySelector(".form_Div");
 let addMov = document.querySelector("#add_mov");
@@ -127,13 +128,15 @@ let init = () => {
 addMov.addEventListener("click", () => {
   console.log("clicked add mov");
   init();
-  acc.remove();
-  showMovieForm();
+  acc.style.display = "none";
+  form.style.display = "block";
+  // form.classList = "form_Div_active";
 });
 // Add home button function
 homeBtn.addEventListener("click", () => {
-  console.log("clicked add watch");
+  console.log("clicked home");
   init();
-  formContainer.removeChild(form);
-  showAccordian();
+  acc.style.display = "block";
+  form.style.display = "none";
+  // form.classList = "form_Div";
 });

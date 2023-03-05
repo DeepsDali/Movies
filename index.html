@@ -23,7 +23,40 @@
       <button id="add_watch" class="nav_btn">My Watchlist</button>
     </nav>
     <section id="accordian_container" class="container"></section>
-    <section id="form_container" class="container"></section>
+    <section id="form_container" class="container">
+      <div class="form_Div">
+        <form id="movie-form">
+          <label for="movie-title">Movie Title:</label>
+          <input
+            type="text"
+            name="movie-title"
+            id="movie-title"
+            class="field"
+          />
+          <br />
+          <label for="plot">Plot summary: </label>
+          <input type="textarea" name="plot" id="plot" class="field" />
+          <br />
+          <label for="cast">Cast :</label>
+          <input type="text" name="cast" id="cast" class="field" />
+          <br />
+          <label for="runtime">Runtime:</label>
+          <input type="number" name="runtime" id="runtime" class="field" />
+          <br />
+          <label for="year">Year of release:</label>
+          <input type="number" name="year" id="year" class="field" />
+          <br />
+          <label for="rating">Rating:</label>
+          <input type="number" name="rating" id="rating" class="field" />
+          <br />
+
+          <label for="link">Poster Link:</label>
+          <input type="text" name="link" id="link" class="field" />
+          <br />
+          <button type="submit" id="submit-btn" class="nav_btn">Submit</button>
+        </form>
+      </div>
+    </section>
     <script src="./script.js"></script>
   </body>
 </html>
