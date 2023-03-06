@@ -1,8 +1,8 @@
 :root {
   --mustard: #ecbc55;
-  --pistachio: #a4f0f8;
+  --lavendar: #c4bbf0;
   --grey: #535474;
-  --purple: #432c51;
+  --emarald: #1d2d50;
 }
 
 * {
@@ -12,7 +12,7 @@
 }
 body {
   min-height: 100vh;
-  background-color: var(--purple);
+  background-color: var(--emarald);
   color: var(--mustard);
   font-family: "Gruppo", cursive;
   font-size: 1em;
@@ -51,7 +51,7 @@ nav {
 
 .nav_btn:hover {
   background-color: var(--mustard);
-  color: var(--purple);
+  color: var(--emarald);
 }
 
 .container {
@@ -62,10 +62,10 @@ nav {
   font-family: "Gruppo", cursive;
   font-weight: bold;
   padding: 0.5em;
-  background-color: var(--pistachio);
+  background-color: var(--lavendar);
   text-align: left;
   padding-left: 2.5em;
-  color: var(--purple);
+  color: var(--emarald);
   width: 95vw;
   cursor: pointer;
   font-size: clamp(1rem, 2vw, 3rem);
@@ -78,8 +78,9 @@ nav {
   padding: 1vw;
   width: 100%;
   display: none;
-  color: var(--pistachio);
-  background-color: var(--pistachio);
+
+  background-color: #c4bbf0;
+  border-radius: 0 25px;
 }
 .poster_Div {
   flex-basis: 150px;
@@ -93,9 +94,9 @@ nav {
   max-width: 100%;
 }
 .movie_details_Div {
-  color: var(--purple);
-  font-size: clamp(1rem, 2vw, 4rem);
-  font-weight: bolder;
+  color: var(--emarald);
+  font-size: clamp(1rem, 1.5vw, 3rem);
+  font-weight: bold;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -118,18 +119,15 @@ nav {
 .active {
   display: inline-flex;
   padding: 1vw;
-
-  /* width: 100%; */
 }
 .form_Div {
   display: none;
-  background-color: var(--pistachio);
-  color: var(--purple);
+  background-color: var(--lavendar);
   padding: 1vw;
   margin: auto;
   border-radius: 0 25px;
 }
-#movie-form {
+#movie_form {
   display: flex;
   margin: 10px auto;
   flex-direction: column;
@@ -137,14 +135,14 @@ nav {
   justify-content: space-around;
   font-family: "Gruppo", cursive;
   font-weight: bold;
-  color: var(--purple);
+  color: var(--emarald);
 }
 .field {
   width: 300px;
   height: 25px;
 }
 legend {
-  color: var(--purple);
+  color: var(--emarald);
 }
 @media only screen and (min-width: 768px) {
   .container {
@@ -155,7 +153,9 @@ legend {
     width: 70vw;
   }
   .poster_Div {
-    width: 30vw;
+    flex-basis: 200px;
+    flex-grow: 0;
+    flex-shrink: 0;
   }
   .form_Div {
     width: 50vw;

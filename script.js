@@ -47,7 +47,7 @@ formContainer = document.querySelector("#form_container");
 // Show Accordian function
 let showAccordian = () => {
   console.log("show accordian");
-
+  let movies = Object.entries(movieData);
   let accorDiv = document.createElement("div");
   accorDiv.classList.add("accordian");
 
@@ -101,16 +101,6 @@ let showAccordian = () => {
 };
 showAccordian();
 
-// Add Show Movie Form Function
-// let showMovieForm = () => {
-//   let formDiv = document.createElement("div");
-//   formDiv.classList.add("form_Div");
-//   let para = document.createElement("p");
-//   para.innerHTML = `This is a form`;
-//   formDiv.appendChild(para);
-//   formContainer.appendChild(formDiv);
-// };
-
 let formDiv = document.querySelector(".form_Div");
 let acc = document.querySelector(".accordian");
 let form = document.querySelector(".form_Div");
@@ -118,7 +108,6 @@ let addMov = document.querySelector("#add_mov");
 let homeBtn = document.querySelector("#home");
 
 // Add initialization function
-
 let init = () => {
   acc = document.querySelector(".accordian");
   form = document.querySelector(".form_Div");
@@ -130,7 +119,6 @@ addMov.addEventListener("click", () => {
   init();
   acc.style.display = "none";
   form.style.display = "block";
-  // form.classList = "form_Div_active";
 });
 // Add home button function
 homeBtn.addEventListener("click", () => {
@@ -138,5 +126,48 @@ homeBtn.addEventListener("click", () => {
   init();
   acc.style.display = "block";
   form.style.display = "none";
-  // form.classList = "form_Div";
+});
+
+// Add movie
+
+const movieForm = document.getElementById("movie_form");
+const submitBtn = document.querySelector("#submit_btn");
+const movieTitle = document.getElementById("movie_title");
+const plot = document.getElementById("plot");
+const cast = document.getElementById("cast");
+const runtime = document.getElementById("runtime");
+const year = document.getElementById("year");
+const rating = document.getElementById("rating");
+const link = document.getElementById("link");
+
+class Movie {
+  constructor(plot, cast, runtime, rating, year, link) {
+    this.plot = plot;
+    this.cast = cast;
+    this.runtime = runtime;
+    this.rating = rating;
+    this.year = year;
+    this.link = link;
+  }
+}
+// Add submit button function
+submitBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  init();
+  console.log("Clicked submit");
+  let objName = movieTitle.value;
+  let movie = new Movie(
+    plot.value,
+    cast.value,
+    runtime.value,
+    rating.value,
+    year.value,
+    link.value
+  );
+  console.log(movie);
+  movieData[objName] = movie;
+  acc.remove();
+  showAccordian();
+  movieForm.reset();
+  form.style.display = "none";
 });
