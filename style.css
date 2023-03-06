@@ -28,6 +28,17 @@ h1 {
   margin: auto;
   border-radius: 0 50px;
 }
+h2 {
+  font-family: "Gruppo", cursive;
+  background-color: var(--lavendar);
+  color: var(--emarald);
+  text-align: center;
+  padding: 0.25em;
+  font-size: clamp(1rem, 2vw, 3rem);
+  width: 80vw;
+  margin: 10px auto;
+  border-radius: 0 10px;
+}
 nav {
   display: flex;
   justify-content: space-around;
@@ -78,9 +89,25 @@ nav {
   padding: 1vw;
   width: 100%;
   display: none;
-
   background-color: #c4bbf0;
   border-radius: 0 25px;
+}
+.watchlistPosters {
+  background-color: var(--emarald);
+  width: 80vw;
+  display: none;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+}
+.watchlistPoster_img {
+  padding: 5px;
+  width: 150px;
+  height: 200px;
+  object-fit: contain;
+  max-height: 100%;
+  max-width: 100%;
 }
 .poster_Div {
   flex-basis: 150px;
@@ -159,5 +186,8 @@ legend {
   }
   .form_Div {
     width: 50vw;
+  }
+  .watchlistPosters {
+    width: 60vw;
   }
 }

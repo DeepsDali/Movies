@@ -41,14 +41,16 @@ let movieData = {
 let movies = Object.entries(movieData);
 console.log(movies[0][0]);
 console.log(movies);
-accordianContainer = document.querySelector("#accordian_container");
-formContainer = document.querySelector("#form_container");
+let accordianContainer = document.querySelector("#accordian_container");
+let formContainer = document.querySelector("#form_container");
+let watchPosters = document.querySelector("#watchlist_posters");
 
 // Show Accordian function
 let showAccordian = () => {
   console.log("show accordian");
   let movies = Object.entries(movieData);
   let accorDiv = document.createElement("div");
+
   accorDiv.classList.add("accordian");
 
   movies.forEach((movie) => {
@@ -63,6 +65,8 @@ let showAccordian = () => {
     posterDiv.classList.add("poster_Div");
     let poster = document.createElement("img");
     poster.classList.add("poster_img");
+    let watchlistPoster = document.createElement("img");
+    watchlistPoster.classList.add("watchlistPoster_img");
     // Create movie-details div
     let movieDetailsDiv = document.createElement("div");
     movieDetailsDiv.classList.add("movie_details_Div");
@@ -75,6 +79,7 @@ let showAccordian = () => {
     // Add content to elements
     btn.innerHTML = `${movie[1].year} : ${movie[0]}`;
     poster.src = movie[1].link;
+    watchlistPoster.src = movie[1].link;
     plot.innerHTML = `Plot: ${movie[1].plot}`;
     cast.innerHTML = `Cast: ${movie[1].cast}`;
     runtime.innerHTML = `Runtime: ${movie[1].runtime}`;
@@ -97,6 +102,10 @@ let showAccordian = () => {
       console.log("Clicked");
       movie_info.classList.toggle("active");
     });
+    watchBtn.addEventListener("click", () => {
+      console.log("Clicked add to watchlist btn");
+      watchPosters.appendChild(watchlistPoster);
+    });
   });
 };
 showAccordian();
@@ -106,11 +115,12 @@ let acc = document.querySelector(".accordian");
 let form = document.querySelector(".form_Div");
 let addMov = document.querySelector("#add_mov");
 let homeBtn = document.querySelector("#home");
-
+let myWatchlist = document.querySelector("#my_watchlist");
 // Add initialization function
 let init = () => {
   acc = document.querySelector(".accordian");
   form = document.querySelector(".form_Div");
+  watchPosters = document.querySelector("#watchlist_posters");
 };
 
 // Add Movie button function
@@ -119,6 +129,7 @@ addMov.addEventListener("click", () => {
   init();
   acc.style.display = "none";
   form.style.display = "block";
+  watchPosters.style.display = "none";
 });
 // Add home button function
 homeBtn.addEventListener("click", () => {
@@ -126,6 +137,15 @@ homeBtn.addEventListener("click", () => {
   init();
   acc.style.display = "block";
   form.style.display = "none";
+  watchPosters.style.display = "none";
+});
+// Add watchlist button function
+myWatchlist.addEventListener("click", (e) => {
+  console.log("clicked my watchlist");
+  init();
+  watchPosters.style.display = "flex";
+  form.style.display = "none";
+  acc.style.display = "none";
 });
 
 // Add movie
