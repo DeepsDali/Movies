@@ -77,7 +77,8 @@ let showAccordian = () => {
     let watchBtn = document.createElement("button");
     watchBtn.classList.add("nav_btn");
     // Add content to elements
-    btn.innerHTML = `${movie[1].year} : ${movie[0]}`;
+    btn.innerHTML = `${movie[1].year} : ${movie[0]} `;
+
     poster.src = movie[1].link;
     watchlistPoster.src = movie[1].link;
     plot.innerHTML = `Plot: ${movie[1].plot}`;
@@ -94,13 +95,24 @@ let showAccordian = () => {
     movieDetailsDiv.appendChild(watchBtn);
     movie_info.appendChild(posterDiv);
     movie_info.appendChild(movieDetailsDiv);
+    let span = document.createElement("span");
+    span.innerHTML = `<i class="fa fa-angle-down"></i>`;
+    span.classList.add("arrow");
+    btn.appendChild(span);
     accorDiv.appendChild(btn);
     accorDiv.appendChild(movie_info);
     accordianContainer.appendChild(accorDiv);
+
     // Toggle to show / hide movie info
     btn.addEventListener("click", () => {
       console.log("Clicked");
       movie_info.classList.toggle("active");
+
+      if (span.innerHTML === `<i class="fa fa-angle-down"></i>`) {
+        span.innerHTML = `<i class="fa fa-angle-up"></i>`;
+      } else {
+        span.innerHTML = `<i class="fa fa-angle-down"></i>`;
+      }
     });
     watchBtn.addEventListener("click", () => {
       console.log("Clicked add to watchlist btn");

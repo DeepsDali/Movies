@@ -83,8 +83,15 @@ nav {
   margin: 5px auto;
   border: 0;
   border-radius: 0 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+.arrow {
+  font-size: 34px;
 
+  color: #1d2d50;
+}
 .mov {
   padding: 1vw;
   width: 100%;
