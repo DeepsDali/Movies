@@ -26,6 +26,21 @@
       <button id="add_mov" class="nav_btn">Add Movie</button>
       <button id="my_watchlist" class="nav_btn">My Watchlist</button>
     </nav>
+    <section class="container">
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">
+          Sort by Release Year
+          <i class="fa fa-chevron-down" style="font-size: 18px"></i>
+        </button>
+        <div id="myDropdown" class="dropdown-content">
+          <!-- <a href="#home">Latest</a>
+          <a href="#about">Earliest</a> -->
+          <button class="drop_content">Latest</button>
+          <button class="drop_content">Oldest</button>
+          <!-- <a href="#about">Earliest</a> -->
+        </div>
+      </div>
+    </section>
     <section id="accordian_container" class="container"></section>
     <section id="Watchlist_container" class="container">
       <div id="watchlist_posters" class="watchlistPosters">
@@ -66,6 +81,7 @@
         </form>
       </div>
     </section>
+
     <script src="./script.js"></script>
   </body>
 </html>

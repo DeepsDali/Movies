@@ -78,7 +78,6 @@ let showAccordian = () => {
     watchBtn.classList.add("nav_btn");
     // Add content to elements
     btn.innerHTML = `${movie[1].year} : ${movie[0]} `;
-
     poster.src = movie[1].link;
     watchlistPoster.src = movie[1].link;
     plot.innerHTML = `Plot: ${movie[1].plot}`;
@@ -102,17 +101,21 @@ let showAccordian = () => {
     accorDiv.appendChild(btn);
     accorDiv.appendChild(movie_info);
     accordianContainer.appendChild(accorDiv);
-
     // Toggle to show / hide movie info
     btn.addEventListener("click", () => {
       console.log("Clicked");
       movie_info.classList.toggle("active");
-
+      // if (movie_info !== movie_info.movie) {
+      //   movie_info.classList.remove("active");
+      // } else {
+      // movie_info.classList.add("active");
+      // }
       if (span.innerHTML === `<i class="fa fa-angle-down"></i>`) {
         span.innerHTML = `<i class="fa fa-angle-up"></i>`;
       } else {
         span.innerHTML = `<i class="fa fa-angle-down"></i>`;
       }
+      console.log(btn.nextElementSibling);
     });
     watchBtn.addEventListener("click", () => {
       console.log("Clicked add to watchlist btn");
@@ -203,3 +206,25 @@ submitBtn.addEventListener("click", (e) => {
   movieForm.reset();
   form.style.display = "none";
 });
+
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function (event) {
+  if (!event.target.matches(".dropbtn")) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+      }
+    }
+  }
+};
+
+//Sort Dropdown
