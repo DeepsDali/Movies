@@ -1,6 +1,6 @@
 console.log("Checking");
 let movieData = {
-  "The Darjeeling Limited": {
+  "A The Darjeeling Limited": {
     plot: "A year after their father's funeral, three brothers travel across India by train in an attempt to bond with each other.",
     cast: ["Jason Schwartzman", "Owen Wilson", "Adrien Brody"],
     runtime: 151,
@@ -8,7 +8,7 @@ let movieData = {
     year: 2007,
     link: "https://cdn.shopify.com/s/files/1/0037/8008/3782/products/IMG_2440-740741.jpg?v=1611688443 ",
   },
-  "The Royal Tenenbaums": {
+  "B The Royal Tenenbaums": {
     plot: "The eccentric members of a dysfunctional family reluctantly gather under the same roof for various reasons",
     rating: 7.6,
     year: 2001,
@@ -16,7 +16,7 @@ let movieData = {
     runtime: 170,
     link: "https://cdn.shopify.com/s/files/1/0037/8008/3782/products/royal_tenenbaums_xlg-868522_4c1cffbe-3538-4681-bc5e-7c6f71ed6c07-221962.jpg?v=1663173396",
   },
-  "Fantastic Mr. Fox": {
+  "C Fantastic Mr. Fox": {
     year: 2009,
     plot: "An urbane fox cannot resist returning to his farm raiding ways and then must help his community survive the farmers' retaliation.",
     cast: [
@@ -29,7 +29,7 @@ let movieData = {
     rating: 7.9,
     link: "https://cdn.shopify.com/s/files/1/0037/8008/3782/products/EEC8D35A-C900-4EF1-B476-C9F876492747-328288_1024x1024@2x.jpg?v=1611687955",
   },
-  "The Grand Budapest Hotel": {
+  "D The Grand Budapest Hotel": {
     rating: 8.1,
     runtime: 159,
     year: 2014,
@@ -40,20 +40,44 @@ let movieData = {
 };
 let movies = Object.entries(movieData);
 console.log(movies[0][0]);
-console.log(movies);
+console.log(movies[0]);
 let accordianContainer = document.querySelector("#accordian_container");
 let formContainer = document.querySelector("#form_container");
 let watchPosters = document.querySelector("#watchlist_posters");
 
+let sortedArray = movies.sort();
 // Show Accordian function
-let showAccordian = () => {
+
+let showAccordian = (arr) => {
   console.log("show accordian");
-  let movies = Object.entries(movieData);
+  movies = Object.entries(movieData);
+
+  // let sortedArray = movies.sort();
+  // let choice = () => {
+  //   if (oldest.clicked == true) {
+  // let sortedArray = movies.sort(function (a, b) {
+  //   return b[1].year - a[1].year;
+  // });
+  //   } else {
+  //     sortedArray = movies.sort();
+  //   }
+  // };
+  // choice();
+
+  // let sortedArray = movies.sort();
+  // oldest.addEventListener("click", () => {
+  //   console.log("clicked oldest");
+  //   sortedArray = movies.sort(function (a, b) {
+  //     return a[1].year - b[1].year;
+  //   });
+  //   // acc.remove();
+  //   // showAccordian(sortedArray);
+  // });
+  console.log(arr.length);
   let accorDiv = document.createElement("div");
-
   accorDiv.classList.add("accordian");
-
-  movies.forEach((movie) => {
+  arr.forEach((movie) => {
+    // movies.forEach((movie) => {
     // Create Button
     let btn = document.createElement("button");
     btn.classList.add("btn_title");
@@ -123,7 +147,7 @@ let showAccordian = () => {
     });
   });
 };
-showAccordian();
+showAccordian(sortedArray);
 
 let formDiv = document.querySelector(".form_Div");
 let acc = document.querySelector(".accordian");
@@ -131,11 +155,14 @@ let form = document.querySelector(".form_Div");
 let addMov = document.querySelector("#add_mov");
 let homeBtn = document.querySelector("#home");
 let myWatchlist = document.querySelector("#my_watchlist");
+let dropdown = document.querySelector(".dropdown");
 // Add initialization function
 let init = () => {
   acc = document.querySelector(".accordian");
   form = document.querySelector(".form_Div");
   watchPosters = document.querySelector("#watchlist_posters");
+  dropdown = document.querySelector(".dropdown");
+  // sortedArray = movies.sort();
 };
 
 // Add Movie button function
@@ -145,6 +172,7 @@ addMov.addEventListener("click", () => {
   acc.style.display = "none";
   form.style.display = "block";
   watchPosters.style.display = "none";
+  dropdown.style.display = "none";
 });
 // Add home button function
 homeBtn.addEventListener("click", () => {
@@ -153,6 +181,7 @@ homeBtn.addEventListener("click", () => {
   acc.style.display = "block";
   form.style.display = "none";
   watchPosters.style.display = "none";
+  dropdown.style.display = "inline-block";
 });
 // Add watchlist button function
 myWatchlist.addEventListener("click", (e) => {
@@ -161,6 +190,7 @@ myWatchlist.addEventListener("click", (e) => {
   watchPosters.style.display = "flex";
   form.style.display = "none";
   acc.style.display = "none";
+  dropdown.style.display = "none";
 });
 
 // Add movie
@@ -201,8 +231,12 @@ submitBtn.addEventListener("click", (e) => {
   );
   console.log(movie);
   movieData[objName] = movie;
+  let newMovies = Object.entries(movieData);
+
   acc.remove();
-  showAccordian();
+  console.log(movies.length);
+  dropdown.style.display = "inline-block";
+  showAccordian(newMovies);
   movieForm.reset();
   form.style.display = "none";
 });
@@ -228,3 +262,25 @@ window.onclick = function (event) {
 };
 
 //Sort Dropdown
+let oldest = document.querySelector("#oldest");
+let latest = document.querySelector("#latest");
+
+oldest.addEventListener("click", () => {
+  init();
+  console.log("clicked oldest");
+  console.log(movies.length);
+  let sortedOldest = movies.sort(function (a, b) {
+    return a[1].year - b[1].year;
+  });
+  acc.remove();
+  showAccordian(sortedOldest);
+});
+latest.addEventListener("click", () => {
+  init();
+  console.log("clicked latest");
+  let sortedLatest = movies.sort(function (a, b) {
+    return b[1].year - a[1].year;
+  });
+  acc.remove();
+  showAccordian(sortedLatest);
+});

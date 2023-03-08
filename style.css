@@ -189,6 +189,7 @@ legend {
   font-family: "Gruppo", cursive;
   font-size: clamp(1rem, 1.5vw, 3rem);
   font-weight: bolder;
+  min-width: 150px;
   color: var(--emarald);
   padding: 16px;
   border-radius: 25px 0;
@@ -202,17 +203,19 @@ legend {
 }
 
 .dropdown {
-  /* position: relative; */
+  position: relative;
   display: inline-block;
 }
 
 .dropdown-content {
+  border-radius: 0 25px;
   display: none;
+  text-align: left;
   position: absolute;
   background-color: var(--grey);
   font-size: clamp(1rem, 1.5vw, 3rem);
-  min-width: 220px;
-  overflow: auto;
+  max-width: 150px;
+  /* overflow: auto; */
   font-weight: bold;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -224,7 +227,7 @@ legend {
   background-color: var(--grey);
   padding: 12px 16px;
   cursor: pointer;
-  min-width: 220px;
+  min-width: 150px;
   border: none;
   font-size: clamp(1rem, 1.5vw, 3rem);
   display: block;
