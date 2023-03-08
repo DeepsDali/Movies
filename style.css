@@ -37,7 +37,7 @@ h2 {
   font-size: clamp(1rem, 2vw, 3rem);
   width: 80vw;
   margin: 10px auto;
-  border-radius: 0 10px;
+  border-radius: 25px 0;
 }
 nav {
   display: flex;
@@ -162,7 +162,7 @@ nav {
   background-color: var(--lavendar);
   padding: 1vw;
   margin: auto;
-  border-radius: 0 25px;
+  border-radius: 25px 0;
 }
 #movie_form {
   display: flex;
