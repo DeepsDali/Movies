@@ -11,6 +11,11 @@
       rel="stylesheet"
     />
     <link
+      rel="shortcut icon"
+      href="./images/Picture1.ico"
+      type="image/x-icon"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
@@ -28,10 +33,7 @@
     </nav>
     <section class="container">
       <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">
-          Sort Movies
-          <i class="fa fa-chevron-down" style="font-size: 18px"></i>
-        </button>
+        <button onclick="myFunction()" class="dropbtn">Sort Movies</button>
         <div id="myDropdown" class="dropdown-content">
           <button id="oldest" class="drop_content">Oldest first</button>
           <button id="latest" class="drop_content">Latest first</button>
@@ -53,26 +55,70 @@
             name="movie_title"
             id="movie_title"
             class="field"
+            placeholder="Enter movie name"
+            required
           />
           <br />
           <label for="plot">Plot summary: </label>
-          <input type="textarea" name="plot" id="plot" class="field" />
+          <input
+            type="textarea"
+            name="plot"
+            id="plot"
+            class="field"
+            placeholder="Enter plot summary"
+            required
+          />
           <br />
           <label for="cast">Cast :</label>
-          <input type="text" name="cast" id="cast" class="field" />
+          <input
+            type="text"
+            name="cast"
+            id="cast"
+            class="field"
+            placeholder="Enter names of cast"
+            required
+          />
           <br />
           <label for="runtime">Runtime:</label>
-          <input type="number" name="runtime" id="runtime" class="field" />
+          <input
+            type="number"
+            name="runtime"
+            id="runtime"
+            class="field"
+            placeholder="Enter runtime in minutes"
+            required
+          />
           <br />
           <label for="year">Year of release:</label>
-          <input type="number" name="year" id="year" class="field" />
+          <input
+            type="number"
+            name="year"
+            id="year"
+            class="field"
+            placeholder="Enter 4 digit year of release"
+            required
+          />
           <br />
           <label for="rating">Rating:</label>
-          <input type="number" name="rating" id="rating" class="field" />
+          <input
+            type="number"
+            name="rating"
+            id="rating"
+            class="field"
+            placeholder="Enter a digit between 1 to 10"
+            required
+          />
           <br />
 
           <label for="link">Poster Link:</label>
-          <input type="text" name="link" id="link" class="field" />
+          <input
+            type="text"
+            name="link"
+            id="link"
+            class="field"
+            placeholder="Enter poster link"
+            required
+          />
           <br />
           <button type="submit" id="submit_btn" class="nav_btn">Submit</button>
         </form>
