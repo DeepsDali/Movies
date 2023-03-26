@@ -184,7 +184,9 @@ class Movie {
   }
 }
 // Add submit button function
-submitBtn.addEventListener("click", (e) => {
+
+form = document.querySelector("#movie_form");
+form.addEventListener("submit", (e) => {
   e.preventDefault();
   init();
   console.log("Clicked submit");
