@@ -63,6 +63,8 @@ nav {
 .nav_btn:hover {
   background-color: var(--mustard);
   color: var(--emarald);
+  transform: scale(1.02);
+  transition: all 1s ease;
 }
 
 .container {
@@ -116,6 +118,11 @@ nav {
   object-fit: contain;
   max-height: 100%;
   max-width: 100%;
+}
+.watchlist-text {
+  font-size: 1.5em;
+  padding: 50px;
+  text-align: center;
 }
 .poster_Div {
   flex-basis: 150px;

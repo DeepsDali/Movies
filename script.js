@@ -101,17 +101,32 @@ let showAccordian = (arr) => {
     accorDiv.appendChild(movie_info);
     accordianContainer.appendChild(accorDiv);
     // Toggle to show / hide movie info
+
     btn.addEventListener("click", () => {
       console.log("Clicked");
-      movie_info.classList.toggle("active");
-      if (span.innerHTML === `<i class="fa fa-angle-down"></i>`) {
-        span.innerHTML = `<i class="fa fa-angle-up"></i>`;
-      } else {
-        span.innerHTML = `<i class="fa fa-angle-down"></i>`;
-      }
+
+      let movieInfoDivs = document.querySelectorAll(".mov");
+      movieInfoDivs.forEach((movieInfoDiv) => {
+        if (movieInfoDiv !== btn.nextElementSibling) {
+          movieInfoDiv.classList.remove("active");
+          let spanOther =
+            movieInfoDiv.previousElementSibling.querySelector("span");
+          spanOther.innerHTML = `<i class="fa fa-angle-down"></i>`;
+        } else {
+          movieInfoDiv.classList.toggle("active");
+          if (span.innerHTML === `<i class="fa fa-angle-down"></i>`) {
+            span.innerHTML = `<i class="fa fa-angle-up"></i>`;
+          } else {
+            span.innerHTML = `<i class="fa fa-angle-down"></i>`;
+          }
+        }
+      });
+
       console.log(btn.nextElementSibling);
     });
     watchBtn.addEventListener("click", () => {
+      let watchlistText = document.querySelector(".watchlist-text");
+      watchlistText.style.display = "none";
       console.log("Clicked add to watchlist btn");
       watchPosters.appendChild(watchlistPoster);
     });
